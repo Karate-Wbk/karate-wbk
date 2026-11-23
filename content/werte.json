@@ -1,0 +1,10 @@
+{
+  "eyebrow": "Die Ziele",
+  "titel": "Mehr als Selbstverteidigung.",
+  "zitat": "Karate ist weit mehr als Kampfsport – es ist ein Weg zur persönlichen Stärke, Selbstbeherrschung und Achtsamkeit.",
+  "ziele": [
+    { "titel": "Körperliche Ziele", "punkte": ["Kraft", "Schnelligkeit", "Ausdauer", "Beweglichkeit"] },
+    { "titel": "Geistige Ziele", "punkte": ["Disziplin & Konzentration", "Respekt & Höflichkeit", "Bescheidenheit & Mut", "Selbstbeherrschung"] }
+  ],
+  "philosophie": "Durch die stetige Verbesserung von Technik, Haltung und Persönlichkeit begleitet Karate weit über die Trainingshalle hinaus – als Weg der Charakterentwicklung, der Körper und Geist gleichermaßen fordert."
+}

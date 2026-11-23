@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hatsuun Jindo – Karate Wiebelskirchen e.V.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shippori+Mincho:wght@500;600;700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>document.documentElement.classList.add('js');</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== INTRO / WOW-EFFEKT ===================== -->
+  <div id="intro" class="intro" aria-hidden="true">
+    <div class="intro-panel intro-panel-left"></div>
+    <div class="intro-panel intro-panel-right"></div>
+    <div class="intro-center">
+      <img src="img/Logo.png" alt="" class="intro-logo">
+      <div class="intro-line"></div>
+    </div>
+  </div>
+
+
+
+  <!-- ===================== SCROLL-PROGRESS BALKEN ===================== -->
+  <div class="belt-progress" aria-hidden="true">
+    <div class="belt-progress-fill" id="belt-progress-fill"></div>
+  </div>
+
+  <!-- ===================== SEITEN-NAVIGATION (Dots rechts) ===================== -->
+  <nav class="section-dots" aria-label="Seitenfortschritt">
+    <a class="dot" href="#zielgruppen" data-section="zielgruppen" aria-label="Zielgruppen"></a>
+    <a class="dot" href="#werte" data-section="werte" aria-label="Werte"></a>
+    <a class="dot" href="#training" data-section="training" aria-label="Training"></a>
+    <a class="dot" href="#team" data-section="team" aria-label="Team"></a>
+    <a class="dot" href="#warum" data-section="warum" aria-label="Warum wir"></a>
+    <a class="dot" href="#kontakt" data-section="kontakt" aria-label="Kontakt"></a>
+    <a class="dot" href="#rechtlich" data-section="rechtlich" aria-label="Rechtlich"></a>
+  </nav>
+
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header>
+    <div class="wrap nav-row">
+      <a class="brand" href="#top">
+        <img src="img/Logo.png" alt="Karate Dojo Hatsuun Jindo Wiebelskirchen e.V. – Logo" width="38" height="35">
+        <span class="brand-name"><strong>HATSUUN JINDO</strong><span>Karate Wiebelskirchen e.V.</span></span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle">
+
+      <nav class="links">
+        <a href="#werte">Werte</a>
+        <a href="#training">Training</a>
+        <a href="#team">Team</a>
+        <a href="#warum">Vorteile</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#kontakt" class="btn btn-primary nav-link-cta">Probetraining</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary nav-cta-btn" href="#kontakt">Probetraining</a>
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Helles/dunkles Design umschalten" aria-pressed="false">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
+          </svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+          </svg>
+        </button>
+        <label class="burger" for="menu-toggle" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="wrap hero-grid reveal">
+        <div>
+          <p class="eyebrow" data-c="hero.eyebrow">Shotokan Karate · seit 2000</p>
+          <h1 data-hero-titel>Karate für Kinder&nbsp;&amp; Erwachsene, die mehr wollen als <em>Sport</em>.</h1>
+          <p class="lead" data-c="hero.text">Traditionelles Shotokan-Training in der Ohlenbachhalle Wiebelskirchen – Haltung, Konzentration und Selbstvertrauen, in einer Gruppe, die zusammenhält.</p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#kontakt">Kostenloses Probetraining sichern</a>
+            <a class="btn btn-ghost" href="#werte">Unsere Werte kennenlernen</a>
+          </div>
+
+          <div class="stat-row" data-list="hero.statistiken">
+            <div class="stat"><b class="count-up">2000</b><span>Gegründet</span></div>
+            <div class="stat"><b class="count-up">4</b><span>Lizenzierte Trainer</span></div>
+            <div class="stat"><b class="scramble">DJKB</b><span>Verbandsmitglied</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <img data-c-src="hero.bild" data-c-alt="hero.bild_alt" src="img/Team.jpg" alt="Gruppenfoto des Karate Dojo Hatsuun Jindo Wiebelskirchen e.V." width="1600" height="1200" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ZIELGRUPPEN ===================== -->
+    <section id="zielgruppen">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-c="zielgruppen.eyebrow">Für wen wir trainieren</p>
+          <h2 data-c="zielgruppen.titel">Zwei Wege, ein Dojo.</h2>
+          <p data-c="zielgruppen.text">Ob euer Kind das erste Mal auf die Matte tritt oder ihr selbst einen Ausgleich zum Alltag sucht – bei uns trainiert jede Altersgruppe in ihrem eigenen Tempo.</p>
+        </div>
+
+        <div class="card-grid-2" data-list="zielgruppen.karten">
+          <div class="audience-card reveal">
+            <span class="tag">● Kinder &amp; Familien</span>
+            <h3>Konzentration und Respekt von klein auf</h3>
+            <p>In einer festen Gruppe lernen Kinder Fokus, Disziplin und wie man fair mit Sieg und Niederlage umgeht – spielerisch, aber mit klarer Struktur.</p>
+            <details class="more reveal">
+              <summary>Mehr lesen</summary>
+              <p>Die Kindergruppe trainiert getrennt von den Erwachsenen, angeleitet von erfahrenen Trainern mit Prüferlizenz. Neben Technik stehen Körperbeherrschung, Regeln und ein respektvoller Umgang miteinander im Vordergrund – Werte, die auch außerhalb der Halle tragen.</p>
+            </details>
+          </div>
+
+          <div class="audience-card reveal">
+            <span class="tag" style="color:var(--red)">● Jugendliche &amp; Erwachsene</span>
+            <h3>Fitness, Selbstverteidigung, echter Anspruch</h3>
+            <p>Ein Ausgleich zum Alltag ohne Wettkampfdruck – aber mit echter Tiefe, wenn ihr sie sucht: von den Grundlagen bis zu anspruchsvollen Einheiten für Fortgeschrittene.</p>
+            <details class="more reveal">
+              <summary>Mehr lesen</summary>
+              <p>Trainiert wird traditionelles Shotokan-Karate: Grundtechniken, Kata und Partnerübungen für Kraft, Schnelligkeit, Ausdauer und Beweglichkeit. Wer möchte, kann sich über Prüfungen bis zu höheren Graden weiterentwickeln – Tempo und Ziel bestimmt ihr selbst.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WERTE ===================== -->
+    <section id="werte" class="alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-c="werte.eyebrow">Die Ziele</p>
+          <h2 data-c="werte.titel">Mehr als Selbstverteidigung.</h2>
+        </div>
+
+        <div class="quote-block reveal">
+          <blockquote data-werte-zitat>„Karate ist weit mehr als Kampfsport – es ist ein Weg zur persönlichen Stärke, Selbstbeherrschung und Achtsamkeit.“</blockquote>
+
+          <div class="ziele-cols" data-list="werte.ziele">
+            <div class="ziel-card reveal">
+              <h4>Körperliche Ziele</h4>
+              <ul>
+                <li>Kraft</li>
+                <li>Schnelligkeit</li>
+                <li>Ausdauer</li>
+                <li>Beweglichkeit</li>
+              </ul>
+            </div>
+            <div class="ziel-card reveal">
+              <h4>Geistige Ziele</h4>
+              <ul>
+                <li>Disziplin &amp; Konzentration</li>
+                <li>Respekt &amp; Höflichkeit</li>
+                <li>Bescheidenheit &amp; Mut</li>
+                <li>Selbstbeherrschung</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <details class="more reveal" style="max-width:70ch; margin-top:32px;">
+          <summary>Vollständige Philosophie lesen</summary>
+          <p data-c="werte.philosophie">Durch die stetige Verbesserung von Technik, Haltung und Persönlichkeit begleitet Karate weit über die Trainingshalle hinaus – als Weg der Charakterentwicklung, der Körper und Geist gleichermaßen fordert.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== TRAINING & ZEITEN ===================== -->
+    <section id="training">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-c="training.eyebrow">Training &amp; Zeiten</p>
+          <h2 data-c="training.titel">Zweimal die Woche auf der Matte.</h2>
+        </div>
+
+        <div class="training-grid">
+          <div class="time-card reveal" data-list="training.zeiten">
+            <div class="time-row">
+              <span class="label">Anfänger / Farbgurte</span>
+              <span class="time">Mo &amp; Mi · 18:00–19:00 Uhr</span>
+            </div>
+            <div class="time-row">
+              <span class="label">Fortgeschrittene</span>
+              <span class="time">Mo &amp; Mi · 19:00–20:30 Uhr</span>
+            </div>
+          </div>
+
+          <div class="place-card reveal">
+            <div class="pin">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+              <div>
+                <strong data-c="kontakt.ort_name">Ohlenbachhalle</strong><br><span data-c="kontakt.ort_stadtteil">Wiebelskirchen</span>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="#kontakt">Probetraining vereinbaren</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEAM / TRAINER ===================== -->
+    <section id="team" class="alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-c="team.eyebrow">Das Trainerteam</p>
+          <h2 data-c="team.titel">Erfahrung, die man spürt.</h2>
+          <p data-c="team.text">Unser Trainerteam besteht aus Karateka mit mindestens 15 Jahren Erfahrung im Shotokan Karate – lizenziert und regelmäßig auf externen Lehrgängen weitergebildet.</p>
+        </div>
+
+        <div class="team-photo reveal">
+          <img data-c-src="team.foto" data-c-alt="team.foto_alt" src="img/posing.jpg" alt="Drei Trainer des Dojos in einer Karate-Pose" width="1536" height="1152" loading="lazy">
+        </div>
+
+        <div class="team-grid" data-list="team.trainer">
+          <div class="team-card reveal">
+            <span class="avatar">GR</span>
+            <h4>Gisbert Raber</h4>
+            <span class="rank">6. Dan · Dojoleiter</span>
+            <div class="dan-stripes" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p>Seit Gründung 2000, 46 Jahre im Karate. Trainer- &amp; Prüferlizenz, Physiotherapeut.</p>
+          </div>
+
+          <div class="team-card reveal">
+            <span class="avatar">DH</span>
+            <h4>Daniel Haßdenteufel</h4>
+            <span class="rank">2. Dan</span>
+            <div class="dan-stripes" aria-hidden="true"><span></span><span></span></div>
+            <p>17 Jahre aktiv im Karate, Prüferlizenz.</p>
+          </div>
+
+          <div class="team-card reveal">
+            <span class="avatar">LR</span>
+            <h4>Lukas Raber</h4>
+            <span class="rank">1. Dan</span>
+            <div class="dan-stripes" aria-hidden="true"><span></span></div>
+            <p>16 Jahre aktiv im Karate, Prüferlizenz.</p>
+          </div>
+
+          <div class="team-card reveal">
+            <span class="avatar">AG</span>
+            <h4>Antonio Gelardi</h4>
+            <span class="rank">1. Dan</span>
+            <div class="dan-stripes" aria-hidden="true"><span></span></div>
+            <p>15 Jahre aktiv im Karate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WARUM WIR / VORTEILE (USP) ===================== -->
+    <section id="warum">
+      <div class="wrap usp-row">
+        <div class="usp-title reveal">
+          <p class="eyebrow">Warum Hatsuun Jindo</p>
+          <h2 class="stack-title">
+            <span class="stack-line">WAS</span>
+            <span class="stack-line">UNS</span>
+            <span class="stack-line">AUSMACHT</span>
+          </h2>
+        </div>
+
+        <div class="usp-list" data-list="vorteile.punkte">
+          <div class="usp reveal">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>
+            </span>
+            <div class="usp-body">
+              <h4>Seit 2000</h4>
+              <p>Traditionsverein mit über zwei Jahrzehnten Erfahrung in Wiebelskirchen.</p>
+            </div>
+          </div>
+
+          <div class="usp reveal">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+            </span>
+            <div class="usp-body">
+              <h4>Erfahrene Trainer</h4>
+              <p>15 bis 46 Jahre Karate-Erfahrung, lizenziert und laufend weitergebildet.</p>
+            </div>
+          </div>
+
+          <div class="usp reveal">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v6a8 8 0 0 1-16 0V4Z"/><path d="M4 4H2v2a3 3 0 0 0 3 3M20 4h2v2a3 3 0 0 1-3 3M12 18v3M8 21h8"/></svg>
+            </span>
+            <div class="usp-body">
+              <h4>Mitglied im DJKB</h4>
+              <p>Eingebunden in den Verband – geprüfte Qualität und anerkannte Graduierungen.</p>
+            </div>
+          </div>
+
+          <div class="usp reveal">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <div class="usp-body">
+              <h4>Traditionelles Shotokan</h4>
+              <p>Klassisches Karate statt Trend – Technik, Haltung und Werte im Mittelpunkt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KONTAKT (Gutschein/Ticket) ===================== -->
+    <section id="kontakt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-c="kontakt.eyebrow">Kontakt</p>
+          <h2 data-c="kontakt.titel">Dein Ticket fürs erste Training.</h2>
+          <p data-c="kontakt.text">Meld dich einfach – die rechte Seite ist dein Gutschein für ein kostenloses Probetraining, unverbindlich und ohne Verpflichtung.</p>
+        </div>
+
+        <div class="voucher reveal">
+          <span class="voucher-edge voucher-edge-top reveal" aria-hidden="true"></span>
+          <span class="voucher-edge voucher-edge-bottom reveal" aria-hidden="true"></span>
+          <span class="voucher-edge voucher-edge-left reveal" aria-hidden="true"></span>
+          <span class="voucher-edge voucher-edge-right reveal" aria-hidden="true"></span>
+
+          <div class="voucher-info">
+            <img class="voucher-figure reveal" src="img/Kick.png" alt="" aria-hidden="true" width="577" height="433" loading="lazy">
+
+            <div class="voucher-items">
+              <div class="voucher-item reveal">
+                <span class="icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                </span>
+                <div>
+                  <h4>Standort</h4>
+                  <p data-k="adresse">Ohlenbachhalle<br>Tannenweg 6<br>66540 Neunkirchen-Wiebelskirchen</p>
+                </div>
+              </div>
+
+              <div class="voucher-item reveal">
+                <span class="icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.8 21 3 14.2 3 6a2 2 0 0 1 1-2Z"/></svg>
+                </span>
+                <div>
+                  <h4>Telefon</h4>
+                  <p><a data-k="tel" href="tel:+496821635935">06821 635935</a></p>
+                </div>
+              </div>
+
+              <div class="voucher-item reveal">
+                <span class="icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                </span>
+                <div>
+                  <h4>Training</h4>
+                  <p data-c="training.kurzinfo">Mo &amp; Mi, ab 18 Uhr</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="voucher-perf" aria-hidden="true"></div>
+
+          <div class="voucher-form">
+            <p class="voucher-tag reveal">✃ Gutschein · 1 Probetraining</p>
+
+            <form id="kontakt-form" action="https://formspree.io/f/mljdlvnn" method="POST">
+              <input type="hidden" name="_subject" value="Neue Nachricht über die Website">
+
+              <div class="field">
+                <label for="c-name">Name</label>
+                <input type="text" id="c-name" name="name" required>
+              </div>
+
+              <div class="field">
+                <label for="c-mail">E-Mail</label>
+                <input type="email" id="c-mail" name="email" required>
+              </div>
+
+              <div class="field">
+                <label for="c-msg">Nachricht</label>
+                <textarea id="c-msg" name="message" rows="3"></textarea>
+              </div>
+
+              <label class="voucher-consent">
+                <input type="checkbox" required>
+                <span>Ich bin mit der Verarbeitung meiner Angaben gemäß <a href="#datenschutz">Datenschutzerklärung</a> einverstanden.</span>
+              </label>
+
+              <button type="submit" class="btn btn-primary voucher-submit">Gutschein anfordern</button>
+              <p class="voucher-note" id="kontakt-note" hidden></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="flyer reveal">
+          <a class="flyer-thumb" data-c-href="kontakt.flyer.pdf" href="flyer/Flyer-Hatsuun-Jindo-2026.pdf" target="_blank" rel="noopener" aria-label="Flyer als PDF in neuem Tab öffnen">
+            <img data-c-src="kontakt.flyer.vorschau" src="img/flyer-vorschau.jpg" alt="Vorschau des aktuellen Flyers vom Karate Dojo Hatsuun Jindo Wiebelskirchen e.V." width="1000" height="707" loading="lazy">
+          </a>
+          <div class="flyer-info">
+            <p class="eyebrow">Zum Mitnehmen</p>
+            <h3 data-c="kontakt.flyer.titel">Unser aktueller Flyer</h3>
+            <p data-c="kontakt.flyer.text">Alle Infos zu Training, Zeiten und Kontakt auf einen Blick – zum Ausdrucken oder Weiterleiten.</p>
+            <a class="btn btn-primary" data-c-href="kontakt.flyer.pdf" href="flyer/Flyer-Hatsuun-Jindo-2026.pdf" download>Flyer herunterladen (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RECHTLICHES (Impressum / Datenschutz) ===================== -->
+    <section id="rechtlich" class="alt" style="padding-block:48px;">
+      <div class="wrap">
+        <p class="eyebrow reveal" style="margin-bottom:20px;">Rechtliches</p>
+
+        <details id="impressum" class="legal-item reveal">
+          <summary>Impressum</summary>
+          <div class="legal-body reveal" data-c-html="rechtliches.impressum">
+            <p><strong>Angaben gemäß § 5 TMG</strong></p>
+            <p>Karate Dojo Hatsuun Jindo Wiebelskirchen e.V.<br>Tannenweg 6<br>66540 Neunkirchen</p>
+            <p><strong>Vertreten durch:</strong><br>Wolfgang Thiel</p>
+            <p><strong>Kontakt:</strong><br>Tel. 06821 635935<br><a href="mailto:Wolfgang@karate-wbk.de">Wolfgang@karate-wbk.de</a></p>
+            <p><strong>Registereintrag:</strong><br>Registergericht: Amtsgericht Neunkirchen<br>Registernummer: 0624</p>
+            <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>Wolfgang Thiel</p>
+          </div>
+        </details>
+
+        <details id="datenschutz" class="legal-item reveal">
+          <summary>Datenschutzerklärung</summary>
+          <div class="legal-body reveal" data-c-html="rechtliches.datenschutz">
+            <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten erhoben werden, erfolgt dies stets auf freiwilliger Basis und/oder mit Einwilligung. Eine Ausnahme gilt in Fällen, in denen eine vorherige Einholung einer Einwilligung aus tatsächlichen Gründen nicht möglich ist und die Verarbeitung der Daten durch gesetzliche Vorschriften gestattet ist. Soweit wir für Verarbeitungsvorgänge personenbezogener Daten eine Einwilligung einholen, dient Art. 6 Abs. 1 lit. a DSGVO als Rechtsgrundlage.</p>
+            <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+            <p><strong>Verantwortlicher für die Datenverarbeitung</strong><br>1. Vorsitzender: Wolfgang Thiel<br>Tannenweg 6, 66540 Neunkirchen<br>Tel. 06821 635935 · <a href="mailto:Wolfgang@karate-wbk.de">Wolfgang@karate-wbk.de</a></p>
+            <p><strong>Weitergabe von Daten</strong><br>Wir halten uns an die gesetzlichen Vorgaben. Eine Weitergabe von Daten an Dritte erfolgt nur im Rahmen der gesetzlichen Vorschriften.</p>
+            <p><strong>Kontaktformular &amp; Kontakt per E-Mail</strong><br>Bei einer Kontaktaufnahme per E-Mail oder über unser Kontaktformular werden Ihre Angaben zwecks Bearbeitung der Anfrage sowie für den Fall, dass Anschlussfragen entstehen, gem. Art. 6 Abs. 1 lit. b) DSGVO bzw. auf Grundlage unseres berechtigten Interesses gem. Art. 6 Abs. 1 lit. f) DSGVO verarbeitet. Ihre Daten werden gelöscht, sobald die Bearbeitung Ihrer Anfrage abgeschlossen ist.</p>
+            <p><strong>Hosting</strong><br>Diese Website wird bei Netlify, Inc., 101 2nd Street, Suite 575, San Francisco, CA 94105, USA gehostet. Beim Aufruf der Seite verarbeitet Netlify technisch notwendige Zugriffsdaten (u. a. IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp), um die Seite auszuliefern und ihre Sicherheit zu gewährleisten. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverlässigen Bereitstellung der Website gem. Art. 6 Abs. 1 lit. f) DSGVO. Netlify ist unter dem EU-U.S. Data Privacy Framework zertifiziert; die Verarbeitung erfolgt auf Grundlage eines Auftragsverarbeitungsvertrags. Weitere Informationen: <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Datenschutzerklärung von Netlify</a>.</p>
+            <p><strong>Betroffenenrechte</strong><br>Auskunftsrecht gem. Art. 15 DSGVO; Recht auf Berichtigung gem. Art. 16 DSGVO; Recht auf Löschung gem. Art. 17 DSGVO; Recht auf Einschränkung der Verarbeitung gem. Art. 18 DSGVO; Recht auf Unterrichtung gem. Art. 19 DSGVO; Recht auf Datenübertragbarkeit gem. Art. 20 DSGVO; Recht auf Widerruf erteilter Einwilligungen gem. Art. 7 Abs. 3 DSGVO; Recht auf Beschwerde gem. Art. 77 DSGVO.</p>
+            <p><strong>Widerspruch Werbe-Mails</strong><br>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <svg class="footer-figure" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="16" r="10"/>
+      <path d="M60 26 L54 54"/>
+      <path d="M54 54 L42 70 L30 92"/>
+      <path d="M54 54 L82 50 L108 40"/>
+      <path d="M57 34 L78 28 L94 16"/>
+      <path d="M57 34 L38 24 L24 14"/>
+    </svg>
+
+    <div class="footer-cta">
+      <div class="wrap footer-cta-row reveal">
+        <p class="eyebrow">Bereit für die erste Stunde?</p>
+        <h2 class="footer-headline">Trainier mit uns.</h2>
+        <a class="btn btn-primary" href="#kontakt">Kostenloses Probetraining</a>
+      </div>
+    </div>
+
+    <div class="wrap footer-columns">
+      <div class="footer-brand reveal">
+        <img src="img/Logo.png" alt="Hatsuun Jindo Logo" class="footer-logo">
+        <p class="footer-tagline">Karate Dojo Hatsuun Jindo<br>Wiebelskirchen e.V.</p>
+      </div>
+
+      <nav class="footer-nav reveal">
+        <h5>Navigation</h5>
+        <a href="#werte">Werte</a>
+        <a href="#training">Training</a>
+        <a href="#team">Team</a>
+        <a href="#warum">Vorteile</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="footer-contact reveal">
+        <h5>Kontakt</h5>
+        <p data-k="adresse">Ohlenbachhalle<br>Tannenweg 6<br>66540 Neunkirchen-Wiebelskirchen</p>
+        <p><a data-k="tel" href="tel:+496821635935">06821 635935</a><br><a data-k="mail" href="mailto:Wolfgang@karate-wbk.de">Wolfgang@karate-wbk.de</a></p>
+      </div>
+
+      <div class="footer-verband reveal">
+        <h5>Verband</h5>
+        <p><a href="http://www.djkb.com" target="_blank" rel="noopener">DJKB – Deutscher Ju-Jutsu/Karate Bund</a></p>
+      </div>
+    </div>
+
+    <div class="wrap footer-legal-row">
+      <span>© 2026 Karate Dojo Hatsuun Jindo Wiebelskirchen e.V.</span>
+      <div class="footer-legal-links">
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Datenschutz</a>
+      </div>
+    </div>
+
+    <div class="wrap footer-credit">
+      Design &amp; Umsetzung: <a href="mailto:pierre.meithof@web.de">Pierre Meithof - VISIVO</a>
+    </div>
+  </footer>
+
+  <!-- ===================== PROBETRAINING MODAL ===================== -->
+  <dialog id="trial-modal" class="trial-modal">
+    <form id="trial-form" class="trial-modal-form" action="https://formspree.io/f/mljdlvnn" method="POST">
+      <button type="button" class="trial-modal-close" aria-label="Schließen">&times;</button>
+
+      <p class="eyebrow">Kostenloses Probetraining</p>
+      <h3>Wann möchtest du vorbeikommen?</h3>
+
+      <div class="field">
+        <label for="trial-day">Wochentag</label>
+        <select id="trial-day" name="day" required>
+          <option value="">Bitte wählen</option>
+          <option value="Montag">Montag</option>
+          <option value="Mittwoch">Mittwoch</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="trial-time">Uhrzeit</label>
+        <select id="trial-time" name="time" required>
+          <option value="">Bitte wählen</option>
+          <option value="18:00–19:00 Uhr (Anfänger / Farbgurte)">18:00–19:00 Uhr (Anfänger / Farbgurte)</option>
+          <option value="19:00–20:30 Uhr (Fortgeschrittene)">19:00–20:30 Uhr (Fortgeschrittene)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="trial-name">Name</label>
+        <input type="text" id="trial-name" name="name" required>
+      </div>
+
+      <div class="field">
+        <label for="trial-age">Alter</label>
+        <input type="number" id="trial-age" name="age" min="3" max="99" required>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Kampfsport-Erfahrung?</span>
+        <div class="trial-radio-row">
+          <label><input type="radio" name="experience" value="Ja" required> Ja</label>
+          <label><input type="radio" name="experience" value="Nein"> Nein</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="trial-mail">E-Mail (für Rückfragen)</label>
+        <input type="email" id="trial-mail" name="mail" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary trial-modal-submit">Anfrage senden</button>
+      <p class="trial-modal-note" id="trial-note" hidden></p>
+    </form>
+  </dialog>
+
+  <!-- WICHTIG: script.js muss NACH dem <dialog> stehen, sonst findet getElementById() das Modal nicht -->
+  <script src="script.js"></script>
+</body>
+</html>

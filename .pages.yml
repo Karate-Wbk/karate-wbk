@@ -1,0 +1,217 @@
+# Konfiguration für Pages CMS (https://app.pagescms.org)
+# Legt fest, welche Felder der Verein in der Bearbeitungsmaske sieht.
+# Design, Animationen und Formulare stehen NICHT hier, die bleiben im Code.
+
+media:
+  - name: bilder
+    label: Bilder
+    input: img
+    output: /img
+    categories: [image]
+    rename: safe
+  - name: flyer
+    label: Flyer (PDF)
+    input: flyer
+    output: /flyer
+    extensions: [pdf]
+    rename: safe
+
+content:
+  - name: hero
+    label: Startbereich
+    type: file
+    path: content/hero.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Kleine Zeile über der Überschrift, type: string }
+      - { name: titel, label: Überschrift, type: string, required: true }
+      - name: titel_hervorhebung
+        label: Rot hervorgehobenes Wort
+        type: string
+        description: Muss genau so in der Überschrift vorkommen. Leer lassen = nichts wird rot.
+      - { name: text, label: Einleitungstext, type: text }
+      - name: bild
+        label: Großes Foto
+        type: image
+        description: Am besten Querformat 4:3, mindestens 1200 Pixel breit.
+        options: { media: bilder }
+      - name: bild_alt
+        label: Bildbeschreibung
+        type: string
+        description: Ein Satz, der beschreibt, was auf dem Foto zu sehen ist (für Suchmaschinen und Vorleseprogramme).
+      - name: statistiken
+        label: Die drei Kennzahlen
+        type: object
+        description: Reine Zahlen zählen beim Laden hoch, Text (z. B. DJKB) bekommt den Buchstaben-Effekt.
+        list: { min: 1, max: 4, collapsible: { collapsed: true, summary: "{wert} – {label}" } }
+        fields:
+          - { name: wert, label: Zahl oder Kürzel, type: string, required: true }
+          - { name: label, label: Beschriftung, type: string, required: true }
+
+  - name: zielgruppen
+    label: Zielgruppen
+    type: file
+    path: content/zielgruppen.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Kleine Zeile über der Überschrift, type: string }
+      - { name: titel, label: Überschrift, type: string, required: true }
+      - { name: text, label: Einleitungstext, type: text }
+      - name: karten
+        label: Karten
+        type: object
+        list: { min: 1, max: 4, collapsible: { collapsed: true, summary: "{tag}" } }
+        fields:
+          - { name: tag, label: Zielgruppe, type: string, required: true }
+          - { name: titel, label: Überschrift, type: string, required: true }
+          - { name: text, label: Kurztext, type: text }
+          - name: mehr
+            label: Text hinter „Mehr lesen“
+            type: text
+            description: Leer lassen = kein „Mehr lesen“.
+
+  - name: werte
+    label: Werte & Ziele
+    type: file
+    path: content/werte.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Kleine Zeile über der Überschrift, type: string }
+      - { name: titel, label: Überschrift, type: string, required: true }
+      - name: zitat
+        label: Zitat
+        type: text
+        description: Ohne Anführungszeichen eingeben, die setzt die Seite selbst.
+      - name: ziele
+        label: Ziel-Karten
+        type: object
+        list: { min: 1, max: 4, collapsible: { collapsed: true, summary: "{titel}" } }
+        fields:
+          - { name: titel, label: Überschrift, type: string, required: true }
+          - { name: punkte, label: Stichpunkte, type: string, list: true }
+      - { name: philosophie, label: Text hinter „Vollständige Philosophie lesen“, type: text }
+
+  - name: training
+    label: Trainingszeiten
+    type: file
+    path: content/training.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Kleine Zeile über der Überschrift, type: string }
+      - { name: titel, label: Überschrift, type: string, required: true }
+      - name: zeiten
+        label: Trainingsgruppen
+        type: object
+        description: Diese Zeiten erscheinen auch als Auswahl im Probetraining-Formular.
+        list: { min: 1, collapsible: { collapsed: true, summary: "{gruppe}: {tage}, {uhrzeit}" } }
+        fields:
+          - { name: gruppe, label: Gruppe, type: string, required: true }
+          - { name: tage, label: Wochentage, type: string, required: true, description: "Kurz, z. B. Mo & Mi" }
+          - { name: uhrzeit, label: Uhrzeit, type: string, required: true, description: "z. B. 18:00–19:00 Uhr" }
+      - name: kurzinfo
+        label: Kurzfassung für den Kontaktbereich
+        type: string
+        description: "z. B. Mo & Mi, ab 18 Uhr"
+      - name: probetraining_tage
+        label: Wählbare Tage im Probetraining-Formular
+        type: string
+        list: { min: 1 }
+        description: Ausgeschrieben, z. B. Montag.
+
+  - name: team
+    label: Trainerteam
+    type: file
+    path: content/team.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Kleine Zeile über der Überschrift, type: string }
+      - { name: titel, label: Überschrift, type: string, required: true }
+      - { name: text, label: Einleitungstext, type: text }
+      - name: foto
+        label: Breites Teamfoto
+        type: image
+        description: Querformat. Oben und unten wird das Foto weich ausgeblendet, Köpfe also nicht ganz an den Rand.
+        options: { media: bilder }
+      - { name: foto_alt, label: Bildbeschreibung, type: string }
+      - name: trainer
+        label: Trainer
+        type: object
+        description: Reihenfolge per Ziehen ändern. Die Reihenfolge hier ist die Reihenfolge auf der Seite.
+        list: { min: 1, collapsible: { collapsed: true, summary: "{name} ({dan}. Dan)" } }
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - name: dan
+            label: Dan-Grad
+            type: number
+            description: Nur die Zahl. Die Streifen auf der Karte passen sich automatisch an.
+            options: { min: 0, max: 10 }
+          - { name: rolle, label: Funktion, type: string, description: "z. B. Dojoleiter. Darf leer bleiben." }
+          - { name: text, label: Kurzbeschreibung, type: text }
+          - name: foto
+            label: Porträtfoto
+            type: image
+            description: Darf leer bleiben, dann erscheinen die Initialen. Am besten quadratisch, Gesicht in der Mitte.
+            options: { media: bilder }
+
+  - name: vorteile
+    label: Vorteile
+    type: file
+    path: content/vorteile.json
+    format: json
+    fields:
+      - name: punkte
+        label: Vorteile
+        type: object
+        description: Die Symbole sind fest und werden der Reihe nach vergeben. Am besten bei vier Punkten bleiben.
+        list: { min: 1, max: 6, collapsible: { collapsed: true, summary: "{titel}" } }
+        fields:
+          - { name: titel, label: Überschrift, type: string, required: true }
+          - { name: text, label: Text, type: text }
+
+  - name: kontakt
+    label: Kontakt & Flyer
+    type: file
+    path: content/kontakt.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Kleine Zeile über der Überschrift, type: string }
+      - { name: titel, label: Überschrift, type: string, required: true }
+      - { name: text, label: Einleitungstext, type: text }
+      - { name: ort_name, label: Name des Trainingsorts, type: string, required: true }
+      - { name: ort_stadtteil, label: Stadtteil, type: string }
+      - { name: strasse, label: Straße und Hausnummer, type: string }
+      - { name: plz_ort, label: PLZ und Ort, type: string }
+      - { name: telefon, label: Telefon, type: string }
+      - name: email
+        label: E-Mail
+        type: string
+        description: Erscheint im Fußbereich. Impressum und Datenschutz haben eigene Angaben unter „Rechtliches“.
+      - name: flyer
+        label: Flyer
+        type: object
+        fields:
+          - { name: titel, label: Überschrift, type: string }
+          - { name: text, label: Text, type: text }
+          - name: pdf
+            label: Flyer als PDF
+            type: file
+            options: { media: flyer, extensions: [pdf] }
+          - name: vorschau
+            label: Vorschaubild des Flyers
+            type: image
+            options: { media: bilder }
+
+  - name: rechtliches
+    label: Rechtliches
+    type: file
+    path: content/rechtliches.json
+    format: json
+    fields:
+      - name: impressum
+        label: Impressum
+        type: rich-text
+        options: { format: html, media: false }
+      - name: datenschutz
+        label: Datenschutzerklärung
+        type: rich-text
+        options: { format: html, media: false }

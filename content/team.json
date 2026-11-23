@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Das Trainerteam",
+  "titel": "Erfahrung, die man spürt.",
+  "text": "Unser Trainerteam besteht aus Karateka mit mindestens 15 Jahren Erfahrung im Shotokan Karate – lizenziert und regelmäßig auf externen Lehrgängen weitergebildet.",
+  "foto": "/img/posing.jpg",
+  "foto_alt": "Drei Trainer des Dojos in einer Karate-Pose",
+  "trainer": [
+    { "name": "Gisbert Raber", "dan": 6, "rolle": "Dojoleiter", "text": "Seit Gründung 2000, 46 Jahre im Karate. Trainer- & Prüferlizenz, Physiotherapeut.", "foto": "" },
+    { "name": "Daniel Haßdenteufel", "dan": 2, "rolle": "", "text": "17 Jahre aktiv im Karate, Prüferlizenz.", "foto": "" },
+    { "name": "Lukas Raber", "dan": 1, "rolle": "", "text": "16 Jahre aktiv im Karate, Prüferlizenz.", "foto": "" },
+    { "name": "Antonio Gelardi", "dan": 1, "rolle": "", "text": "15 Jahre aktiv im Karate.", "foto": "" }
+  ]
+}

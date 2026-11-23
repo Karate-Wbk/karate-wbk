@@ -1,0 +1,17 @@
+{
+  "eyebrow": "Kontakt",
+  "titel": "Dein Ticket fürs erste Training.",
+  "text": "Meld dich einfach – die rechte Seite ist dein Gutschein für ein kostenloses Probetraining, unverbindlich und ohne Verpflichtung.",
+  "ort_name": "Ohlenbachhalle",
+  "ort_stadtteil": "Wiebelskirchen",
+  "strasse": "Tannenweg 6",
+  "plz_ort": "66540 Neunkirchen-Wiebelskirchen",
+  "telefon": "06821 635935",
+  "email": "Wolfgang@karate-wbk.de",
+  "flyer": {
+    "titel": "Unser aktueller Flyer",
+    "text": "Alle Infos zu Training, Zeiten und Kontakt auf einen Blick – zum Ausdrucken oder Weiterleiten.",
+    "pdf": "/flyer/Flyer-Hatsuun-Jindo-2026.pdf",
+    "vorschau": "/img/flyer-vorschau.jpg"
+  }
+}

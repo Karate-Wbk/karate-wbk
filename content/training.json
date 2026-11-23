@@ -1,0 +1,10 @@
+{
+  "eyebrow": "Training & Zeiten",
+  "titel": "Zweimal die Woche auf der Matte.",
+  "zeiten": [
+    { "gruppe": "Anfänger / Farbgurte", "tage": "Mo & Mi", "uhrzeit": "18:00–19:00 Uhr" },
+    { "gruppe": "Fortgeschrittene", "tage": "Mo & Mi", "uhrzeit": "19:00–20:30 Uhr" }
+  ],
+  "kurzinfo": "Mo & Mi, ab 18 Uhr",
+  "probetraining_tage": ["Montag", "Mittwoch"]
+}

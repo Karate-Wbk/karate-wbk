@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Shotokan Karate · seit 2000",
+  "titel": "Karate für Kinder & Erwachsene, die mehr wollen als Sport.",
+  "titel_hervorhebung": "Sport",
+  "text": "Traditionelles Shotokan-Training in der Ohlenbachhalle Wiebelskirchen – Haltung, Konzentration und Selbstvertrauen, in einer Gruppe, die zusammenhält.",
+  "bild": "/img/Team.jpg",
+  "bild_alt": "Gruppenfoto des Karate Dojo Hatsuun Jindo Wiebelskirchen e.V.",
+  "statistiken": [
+    { "wert": "2000", "label": "Gegründet" },
+    { "wert": "4", "label": "Lizenzierte Trainer" },
+    { "wert": "DJKB", "label": "Verbandsmitglied" }
+  ]
+}

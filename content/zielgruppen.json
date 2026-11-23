@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Für wen wir trainieren",
+  "titel": "Zwei Wege, ein Dojo.",
+  "text": "Ob euer Kind das erste Mal auf die Matte tritt oder ihr selbst einen Ausgleich zum Alltag sucht – bei uns trainiert jede Altersgruppe in ihrem eigenen Tempo.",
+  "karten": [
+    {
+      "tag": "Kinder & Familien",
+      "titel": "Konzentration und Respekt von klein auf",
+      "text": "In einer festen Gruppe lernen Kinder Fokus, Disziplin und wie man fair mit Sieg und Niederlage umgeht – spielerisch, aber mit klarer Struktur.",
+      "mehr": "Die Kindergruppe trainiert getrennt von den Erwachsenen, angeleitet von erfahrenen Trainern mit Prüferlizenz. Neben Technik stehen Körperbeherrschung, Regeln und ein respektvoller Umgang miteinander im Vordergrund – Werte, die auch außerhalb der Halle tragen."
+    },
+    {
+      "tag": "Jugendliche & Erwachsene",
+      "titel": "Fitness, Selbstverteidigung, echter Anspruch",
+      "text": "Ein Ausgleich zum Alltag ohne Wettkampfdruck – aber mit echter Tiefe, wenn ihr sie sucht: von den Grundlagen bis zu anspruchsvollen Einheiten für Fortgeschrittene.",
+      "mehr": "Trainiert wird traditionelles Shotokan-Karate: Grundtechniken, Kata und Partnerübungen für Kraft, Schnelligkeit, Ausdauer und Beweglichkeit. Wer möchte, kann sich über Prüfungen bis zu höheren Graden weiterentwickeln – Tempo und Ziel bestimmt ihr selbst."
+    }
+  ]
+}
