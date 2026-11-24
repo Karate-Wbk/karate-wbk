@@ -1,5 +1,15 @@
-/* =====================================================================
-   1. THEME / FARB-VARIABLEN
+/* SCHRIFTEN – lokal eingebunden (keine Verbindung zu Google-Servern) */
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/bebas-neue-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Shippori Mincho';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/shippori-mincho-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Shippori Mincho';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/shippori-mincho-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Shippori Mincho';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/shippori-mincho-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/work-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/work-sans-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/work-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/work-sans-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/work-sans-latin-800-normal.woff2') format('woff2');}/* =====================================================================
+  
+1. THEME / FARB-VARIABLEN
    ===================================================================== */
 :root{
   --red:#c41230; --red-dim:#a80f29; --red-ink:#5c0917;
