@@ -580,15 +580,43 @@ var EMAILJS = {
   publicKey: 'TTIpGlrGxdXzpr06h',
   serviceId: 'service_n8dkjwh',
   templateKontakt: 'template_ay7rajo',
-  templateProbetraining: 'template_7dgs03d'
+  templateProbetraining: 'template_ay7rajo'
 };
 
 function sendViaEmailJS(templateId, form){
-  var params = {};
-  new FormData(form).forEach(function(value, key){
-    if(key.charAt(0) !== '_') params[key] = value;
-  });
-  params.gesendet_am = new Date().toLocaleString('de-DE', {dateStyle:'full', timeStyle:'short'});
+  /* Beschriftungen der Felder in der Mail (Reihenfolge = Reihenfolge in der Tabelle) */
+  var LABELS = {
+    'kontakt-form': [['name','Name'],['email','E-Mail'],['message','Nachricht']],
+    'trial-form':   [['day','Wochentag'],['time','Uhrzeit'],['name','Name'],['age','Alter'],['experience','Kampfsport-Erfahrung'],['mail','E-Mail']]
+  };
+  var istProbe = form.id === 'trial-form';
+  var data = {};
+  new FormData(form).forEach(function(value, key){ data[key] = String(value).trim(); });
+
+  function esc(t){ return String(t || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  var rows = (LABELS[form.id] || []).map(function(pair){
+    var wert = esc(data[pair[0]]).replace(/\n/g,'<br>');
+    if(pair[0] === 'age' && wert) wert += ' Jahre';
+    return '<tr><td style="padding:10px 0;border-bottom:1px solid #eadfcd;width:38%;font:600 12px/1.4 Arial,Helvetica,sans-serif;color:#8a7560;text-transform:uppercase;letter-spacing:.06em;vertical-align:top;">' + pair[1] + '</td>'
+         + '<td style="padding:10px 0;border-bottom:1px solid #eadfcd;font:15px/1.5 Arial,Helvetica,sans-serif;color:#3b2e21;vertical-align:top;">' + (wert || '–') + '</td></tr>';
+  }).join('');
+
+  var name = data.name || '';
+  var params = {
+    art: istProbe ? 'Probetraining' : 'Kontakt',
+    name: name,
+    reply_email: istProbe ? data.mail : data.email,
+    betreff: istProbe ? ('Probetraining: ' + name + ' – ' + (data.day || '')) : ('Neue Nachricht von ' + name),
+    titel: istProbe ? (name + ' möchte zum Probetraining kommen') : ('Nachricht von ' + name),
+    bestaetigung_betreff: istProbe ? 'Deine Anfrage zum Probetraining ist angekommen' : 'Deine Nachricht ist angekommen',
+    bestaetigung_text: istProbe
+      ? 'danke für deine Anfrage zum kostenlosen Probetraining! Sie ist gut bei uns angekommen. Wir melden uns in Kürze bei dir, um den Termin zu bestätigen.'
+      : 'danke für deine Nachricht! Sie ist gut bei uns angekommen. Wir melden uns so schnell wie möglich bei dir.',
+    details_html: '<table role="presentation" width="100%" cellpadding="0" cellspacing="0">' + rows + '</table>',
+    gesendet_am: new Date().toLocaleString('de-DE', {dateStyle:'full', timeStyle:'short'})
+  };
+
   return fetch('https://api.emailjs.com/api/v1.0/email/send', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -703,4 +731,3 @@ onContentReady(function(){
     });
   }catch(e){}
 });
-
