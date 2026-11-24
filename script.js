@@ -577,7 +577,7 @@ onContentReady(function(){
    10. FORMULAR-VERSAND per EmailJS (Kontakt + Probetraining)
    ===================================================================== */
 var EMAILJS = {
-  publicKey: 'HIER_PUBLIC_KEY',
+  publicKey: 'TTIpGlrGxdXzpr06h',
   serviceId: 'service_n8dkjwh',
   templateKontakt: 'template_ay7rajo',
   templateProbetraining: 'template_7dgs03d'
