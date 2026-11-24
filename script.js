@@ -574,8 +574,34 @@ onContentReady(function(){
 });
 
 /* =====================================================================
-   10. KONTAKT: Gutschein-Formular per Formspree senden
+   10. FORMULAR-VERSAND per EmailJS (Kontakt + Probetraining)
    ===================================================================== */
+var EMAILJS = {
+  publicKey: 'HIER_PUBLIC_KEY',
+  serviceId: 'service_n8dkjwh',
+  templateKontakt: 'template_ay7rajo',
+  templateProbetraining: 'template_7dgs03d'
+};
+
+function sendViaEmailJS(templateId, form){
+  var params = {};
+  new FormData(form).forEach(function(value, key){
+    if(key.charAt(0) !== '_') params[key] = value;
+  });
+  params.gesendet_am = new Date().toLocaleString('de-DE', {dateStyle:'full', timeStyle:'short'});
+  return fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      service_id: EMAILJS.serviceId,
+      template_id: templateId,
+      user_id: EMAILJS.publicKey,
+      template_params: params
+    })
+  });
+}
+
+/* Kontakt: Gutschein-Formular */
 (function(){
   try{
     var form = document.getElementById('kontakt-form');
@@ -586,11 +612,7 @@ onContentReady(function(){
       e.preventDefault();
       note.hidden = true;
 
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(response){
+           sendViaEmailJS(EMAILJS.templateKontakt, form).then(function(response){
         if(response.ok){
           note.textContent = 'Danke für deine Nachricht! Wir melden uns bei dir.';
           note.className = 'voucher-note voucher-note-ok';
@@ -661,11 +683,7 @@ onContentReady(function(){
       e.preventDefault();
       note.hidden = true;
 
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(response){
+            sendViaEmailJS(EMAILJS.templateProbetraining, form).then(function(response){
         if(response.ok){
           note.textContent = 'Danke! Deine Anfrage ist raus, wir melden uns bei dir.';
           note.className = 'trial-modal-note trial-modal-note-ok';
