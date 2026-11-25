@@ -201,6 +201,38 @@ content:
             type: image
             options: { media: bilder }
 
+  - name: footer
+    label: Fußbereich
+    type: file
+    path: content/footer.json
+    format: json
+    fields:
+      - { name: cta_eyebrow, label: Kleine Zeile über der Schlusszeile, type: string }
+      - { name: cta_titel, label: Große Schlusszeile, type: string, required: true }
+      - name: cta_button
+        label: Button-Text
+        type: string
+        description: Enthält der Text das Wort „Probetraining“, öffnet der Button das Anmeldeformular. Sonst springt er zum Kontaktbereich.
+      - name: tagline
+        label: Vereinsname neben dem Logo
+        type: text
+        description: Jede Zeile erscheint auf der Seite als eigene Zeile.
+      - { name: verband_titel, label: Überschrift der Verbands-Spalte, type: string }
+      - name: verband
+        label: Verbände und Links
+        type: object
+        list: { min: 1, max: 4, collapsible: { collapsed: true, summary: "{name}" } }
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - name: url
+            label: Internetadresse
+            type: string
+            description: z. B. https://www.djkb.com – leer lassen = Name ohne Link.
+      - name: rechteinhaber
+        label: Name im Copyright
+        type: string
+        description: Das aktuelle Jahr wird automatisch davor gesetzt.
+
   - name: rechtliches
     label: Rechtliches
     type: file

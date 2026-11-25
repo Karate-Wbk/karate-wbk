@@ -465,16 +465,16 @@
 
     <div class="footer-cta">
       <div class="wrap footer-cta-row reveal">
-        <p class="eyebrow">Bereit für die erste Stunde?</p>
-        <h2 class="footer-headline">Trainier mit uns.</h2>
-        <a class="btn btn-primary" href="#kontakt">Kostenloses Probetraining</a>
+        <p class="eyebrow" data-c="footer.cta_eyebrow">Bereit für die erste Stunde?</p>
+        <h2 class="footer-headline" data-c="footer.cta_titel">Trainier mit uns.</h2>
+        <a class="btn btn-primary" href="#kontakt" data-c="footer.cta_button">Kostenloses Probetraining</a>
       </div>
     </div>
 
     <div class="wrap footer-columns">
       <div class="footer-brand reveal">
         <img src="img/Logo.png" alt="Hatsuun Jindo Logo" class="footer-logo">
-        <p class="footer-tagline">Karate Dojo Hatsuun Jindo<br>Wiebelskirchen e.V.</p>
+        <p class="footer-tagline" data-f="tagline">Karate Dojo Hatsuun Jindo<br>Wiebelskirchen e.V.</p>
       </div>
 
       <nav class="footer-nav reveal">
@@ -489,17 +489,17 @@
       <div class="footer-contact reveal">
         <h5>Kontakt</h5>
         <p data-k="adresse">Ohlenbachhalle<br>Tannenweg 6<br>66540 Neunkirchen-Wiebelskirchen</p>
-        <p><a data-k="tel" href="tel:+496821635935">06821 635935</a><br><a data-k="mail" href="info@karate-wbk.de">info@karate-wbk.de</a></p>
+        <p><a data-k="tel" href="tel:+496821635935">06821 635935</a><br><a data-k="mail" href="mailto:info@karate-wbk.de">info@karate-wbk.de</a></p>
       </div>
 
       <div class="footer-verband reveal">
-        <h5>Verband</h5>
-        <p><a href="http://www.djkb.com" target="_blank" rel="noopener">DJKB – Deutscher Ju-Jutsu/Karate Bund</a></p>
+        <h5 data-c="footer.verband_titel">Verband</h5>
+        <div data-list="footer.verband"><p><a href="https://www.djkb.com" target="_blank" rel="noopener">DJKB – Deutscher JKA-Karate Bund</a></p></div>
       </div>
     </div>
 
     <div class="wrap footer-legal-row">
-      <span>© 2026 Karate Dojo Hatsuun Jindo Wiebelskirchen e.V.</span>
+      <span data-f="copyright">© 2026 Karate Dojo Hatsuun Jindo Wiebelskirchen e.V.</span>
       <div class="footer-legal-links">
         <a href="#impressum">Impressum</a>
         <a href="#datenschutz">Datenschutz</a>
@@ -566,5 +566,5 @@
   </dialog>
 
   <!-- WICHTIG: script.js muss NACH dem <dialog> stehen, sonst findet getElementById() das Modal nicht -->
-<script src="script.js?v=2"></script></body>
+<script src="script.js?v=3"></script></body>
 </html>

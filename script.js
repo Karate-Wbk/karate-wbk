@@ -44,7 +44,7 @@ function markContentReady(){
 }
 
 (function(){
-  var FILES = ['hero','zielgruppen','werte','training','team','vorteile','kontakt','rechtliches'];
+  var FILES = ['hero','zielgruppen','werte','training','team','vorteile','kontakt','footer','rechtliches'];
 
   // Icons der Vorteile-Karten: fest im Code, werden der Reihe nach vergeben
   var ICONS = [
@@ -214,6 +214,26 @@ function markContentReady(){
       if(isText(k.email) && k.email) each('[data-k="mail"]', function(el){
         el.textContent = k.email;
         el.setAttribute('href', 'mailto:' + k.email);
+      });
+    });
+
+    /* --- Fußbereich (Footer) --- */
+    safe(function(){
+      var f = c.footer;
+      if(!f) return;
+      if(isText(f.tagline) && f.tagline) each('[data-f="tagline"]', function(el){
+        el.innerHTML = esc(f.tagline).replace(/\r?\n/g, '<br>');
+      });
+      list(c, 'footer.verband', function(v){
+        if(!v || !isText(v.name) || !v.name) return '';
+        var href = isText(v.url) ? String(v.url).trim() : '';
+        if(href && !/^https?:\/\//i.test(href)) href = 'https://' + href;
+        return '<p>' + (href
+          ? '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(v.name) + '</a>'
+          : esc(v.name)) + '</p>';
+      });
+      if(isText(f.rechteinhaber) && f.rechteinhaber) each('[data-f="copyright"]', function(el){
+        el.textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + f.rechteinhaber;
       });
     });
   }
@@ -680,7 +700,7 @@ function sendViaEmailJS(templateId, form){
 })();
 
 /* =====================================================================
-   12. PROBETRAINING-POPUP (Modal: öffnen, schließen, per Formspree senden)
+   12. PROBETRAINING-POPUP (Modal: öffnen, schließen, per EmailJS senden)
    ===================================================================== */
 onContentReady(function(){
   try{
