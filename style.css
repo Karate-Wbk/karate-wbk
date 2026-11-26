@@ -282,7 +282,7 @@ html:not(.js) .theme-toggle{display:none;} /* ohne JS kein funktionsfähiger Ums
 
 @media (max-width:400px){
   .brand-name strong{font-size:1.05rem;}
-  .brand-name span{font-size:.62rem;}
+  .brand-name span{font-size:.6rem; letter-spacing:.03em;}
 }
 
 /* =====================================================================
@@ -532,8 +532,9 @@ blockquote{
   resize:vertical;
 }
 .voucher-form input:focus, .voucher-form textarea:focus{outline:none; border-color:var(--red);}
-.voucher-consent{display:flex; gap:10px; align-items:flex-start; font-size:.78rem; color:var(--grey);}
-.voucher-consent input{margin-top:3px;}
+.voucher-form .voucher-consent{display:flex; gap:10px; align-items:flex-start; font-size:.78rem; font-weight:400; color:var(--grey);}
+.voucher-consent input{width:auto; flex:0 0 auto; margin:3px 0 0; padding:0;}
+.voucher-consent span{flex:1 1 auto; min-width:0;}
 .voucher-consent a{color:var(--red);}
 .voucher-submit{align-self:flex-start; border-radius:999px; margin-top:4px;}
 
@@ -696,4 +697,17 @@ footer::before{
 
 @media (max-width:480px){
   .trial-modal-form{padding:28px 20px;}
+}
+
+/* =====================================================================
+   RESPONSIVE-SICHERUNG (26.11.2026)
+   Grid-Spalten dürfen schmaler werden als ihr Inhalt, damit auf kleinen
+   Handys (320 px) nichts seitlich aus dem Bildschirm ragt.
+   ===================================================================== */
+.hero-grid > *, .card-grid-2 > *, .quote-block > *, .ziele-cols > *,
+.training-grid > *, .team-grid > *, .usp-row > *, .voucher > *, .flyer > *,
+.footer-columns > *{min-width:0;}
+h1, h2, h3, h4{overflow-wrap:break-word; hyphens:manual;}
+@media (max-width:400px){
+  .btn{white-space:normal; text-align:center; max-width:100%;}
 }

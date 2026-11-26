@@ -543,7 +543,10 @@ onContentReady(function(){
     if(!lines.length || !container) return;
 
     function fitLines(){
-      var containerWidth = container.clientWidth * 0.78;
+      // Unter 800 px stehen Titel und Karten untereinander: dann kleiner fitten
+      // und die Höhe NICHT an die Karten angleichen (sonst überlappen die Zeilen).
+      var einspaltig = window.matchMedia && window.matchMedia('(max-width:800px)').matches;
+      var containerWidth = container.clientWidth * (einspaltig ? 0.62 : 0.78);
       var probeSize = 100;
       lines.forEach(function(el){ el.style.fontSize = probeSize + 'px'; });
       var widths = Array.prototype.map.call(lines, function(el){ return el.getBoundingClientRect().width; });
@@ -551,10 +554,15 @@ onContentReady(function(){
       if(!maxWidth) return;
 
       var masterScale = containerWidth / maxWidth;
-      lines.forEach(function(el, i){
-        var lineScale = (maxWidth / widths[i]) * masterScale;
-        el.style.fontSize = (probeSize * lineScale) + 'px';
-      });
+      var sizes = widths.map(function(w){ return probeSize * (maxWidth / w) * masterScale; });
+      // Einspaltig: größte Zeile auf max. 150 px begrenzen, alle Zeilen im gleichen Verhältnis
+      var biggest = Math.max.apply(null, sizes);
+      if(einspaltig && biggest > 150){
+        var f = 150 / biggest;
+        sizes = sizes.map(function(x){ return x * f; });
+        containerWidth = containerWidth * f;
+      }
+      lines.forEach(function(el, i){ el.style.fontSize = sizes[i] + 'px'; });
 
       // Eyebrow-Laufweite an die neue Titelbreite anpassen
       var eyebrow = document.querySelector('.usp-title .eyebrow');
@@ -563,12 +571,15 @@ onContentReady(function(){
         var eyebrowWidth = eyebrow.getBoundingClientRect().width;
         var gaps = eyebrow.textContent.trim().length - 1;
         if(gaps > 0 && eyebrowWidth > 0){
-          eyebrow.style.letterSpacing = ((containerWidth - eyebrowWidth) / gaps) + 'px';
+          var spacing = (containerWidth - eyebrowWidth) / gaps;
+          // Nur strecken, nie zusammenquetschen (schmale Spalte z. B. auf iPad hochkant)
+          eyebrow.style.letterSpacing = spacing > 0 ? spacing + 'px' : 'normal';
         }
       }
 
       // Höhe an die 4 Karten rechts angleichen
       container.style.lineHeight = '.86';
+      if(einspaltig) return;
       var list = document.querySelector('.usp-list');
       var uspTitle = document.querySelector('.usp-title');
       if(list && uspTitle){
