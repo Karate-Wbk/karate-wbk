@@ -374,6 +374,7 @@
             <p class="voucher-tag reveal">✃ Gutschein · 1 Probetraining</p>
 
             <form id="kontakt-form" method="POST">
+              <div class="hp-feld" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;"><label>Website <input type="text" name="_website" tabindex="-1" autocomplete="off"></label></div>
               <input type="hidden" name="_subject" value="Neue Nachricht über die Website">
 
               <div class="field">
@@ -514,6 +515,7 @@
   <!-- ===================== PROBETRAINING MODAL ===================== -->
   <dialog id="trial-modal" class="trial-modal">
     <form id="trial-form" class="trial-modal-form" method="POST">
+              <div class="hp-feld" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;"><label>Website <input type="text" name="_website" tabindex="-1" autocomplete="off"></label></div>
       <button type="button" class="trial-modal-close" aria-label="Schließen">&times;</button>
 
       <p class="eyebrow">Kostenloses Probetraining</p>
@@ -566,5 +568,5 @@
   </dialog>
 
   <!-- WICHTIG: script.js muss NACH dem <dialog> stehen, sonst findet getElementById() das Modal nicht -->
-<script src="script.js?v=3"></script></body>
+<script src="script.js?v=4"></script></body>
 </html>

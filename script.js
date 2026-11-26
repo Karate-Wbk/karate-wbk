@@ -603,7 +603,21 @@ var EMAILJS = {
   templateProbetraining: 'template_ay7rajo'
 };
 
+/* Spam-Schutz: Bots füllen das unsichtbare Feld "_website" aus, schicken in
+   Sekunden nach dem Laden ab oder setzen Zufallszeichen mit Ziffern als Namen.
+   Solche Anfragen werden still verworfen (der Bot sieht trotzdem "Danke"). */
+var SEITE_GELADEN_UM = Date.now();
+function istSpam(form){
+  var hp = form.querySelector('[name="_website"]');
+  if(hp && hp.value) return true;
+  if(Date.now() - SEITE_GELADEN_UM < 4000) return true;
+  var nameFeld = form.querySelector('[name="name"]');
+  if(nameFeld && /\d/.test(nameFeld.value)) return true;
+  return false;
+}
+
 function sendViaEmailJS(templateId, form){
+  if(istSpam(form)) return Promise.resolve({ ok: true });
   /* Beschriftungen der Felder in der Mail (Reihenfolge = Reihenfolge in der Tabelle) */
   var LABELS = {
     'kontakt-form': [['name','Name'],['email','E-Mail'],['message','Nachricht']],
