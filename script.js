@@ -721,6 +721,32 @@ function sendViaEmailJS(templateId, form){
     }
     window.addEventListener('hashchange', openLegalFromHash);
     openLegalFromHash();
+
+    // Kommt jemand mit z. B. /#kontakt auf die Seite: Ziel ansteuern, dann
+    // die Adresszeile wieder auf die saubere Adresse ohne # zurücksetzen.
+    function cleanUrl(){
+      if(location.hash && window.history && history.replaceState){
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+    }
+    if(location.hash) setTimeout(cleanUrl, 1500);
+
+    // Klicks auf interne Links (#werte, #kontakt, …): sanft scrollen,
+    // ohne dass #… in der Adresszeile erscheint.
+    document.addEventListener('click', function(e){
+      if(e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if(!a) return;
+      var id = a.getAttribute('href').slice(1);
+      if(!id) return;
+      var target = document.getElementById(id);
+      if(!target) return;
+      e.preventDefault();
+      if(target.tagName === 'DETAILS') target.open = true;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+      cleanUrl();
+    });
   }catch(e){}
 })();
 
